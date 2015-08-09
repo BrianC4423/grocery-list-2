@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="grocery_list.js"></script>
+    <title>MeeSOO HUNGRY</title>
+  </head>
+  <body>
+    <h1>Grocery List</h1>
+    <h3><a href="http://allrecipes.com/">Meal Ideas</a></h3>
+
+      <form action="/groceries" method="post">
+        <label for="item_added">Add Item:</label>
+        <input type="text" id="item_added" name="item_added" placeholder="Liver & Fava Bean">
+        <select>
+          <option value="produce">Produce</option>
+          <option value="dairy">Dairy</option>
+          <option value="protein">Protein</option>
+          <option value="misc">Misc</option>
+       </select>
+        <input id="click" type="submit">
+          <button onclick=update>clickMe</button>
+      </form>
+      <ul>
+        <% db_output.each do |item| %>
+          <li><%= item["item"] %></li>
+        <% end %>
+      </ul>
+      <script src="/grocery_list.js"></script>
+  </body>
+</html>
